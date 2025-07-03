@@ -3,8 +3,13 @@ services:
     name: QuanlyBanSach
     runtime: ruby
     plan: free
-    buildCommand: './bin/render-build.sh'
-    startCommand: './bin/rails server'
+    buildCommand: >
+      bundle install &&
+      bundle exec rake db:migrate &&
+      bundle exec rake db:seed &&
+      bundle exec rake assets:clean &&
+      bundle exec rake assets:precompile
+    startCommand: 'bin/rails server'
     envVars:
       - key: DATABASE_URL
         fromDatabase:
