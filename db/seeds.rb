@@ -7,7 +7,7 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
-
+puts "🌱 Đang chạy file seeds.rb..."
 # Seed LoaiQuyen
 loai_quyen_admin = LoaiQuyen.find_or_create_by!(TenQuyen: 'Admin')
 loai_quyen_khach = LoaiQuyen.find_or_create_by!(TenQuyen: 'KhachHang')
