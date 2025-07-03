@@ -11,3 +11,4 @@ bin/rails assets:precompile
 
 # Migrate database
 bin/rails db:migrate
+bin/rails db:seed
