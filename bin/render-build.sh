@@ -2,13 +2,8 @@
 set -o errexit
 
 bundle install
+bundle exec rake db:migrate  # 👈 migrate trước
+bundle exec rake db:seed     # seed sau
 
-# Dọn dẹp asset cũ (nếu có)
-bin/rails assets:clean
-
-# Tạo asset mới cho production
-bin/rails assets:precompile
-
-# Migrate database
-bin/rails db:migrate
-bin/rails db:seed
+bundle exec rake assets:clean
+bundle exec rake assets:precompile
